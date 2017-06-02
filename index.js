@@ -8,7 +8,6 @@ const wpwatch = require('./lib/wpwatch');
 const cleanup = require('./lib/cleanup');
 const run = require('./lib/run');
 const serve = require('./lib/serve');
-const packExternalModules = require('./lib/packExternalModules');
 
 class ServerlessWebpack {
   constructor(serverless, options) {
@@ -22,8 +21,7 @@ class ServerlessWebpack {
       wpwatch,
       cleanup,
       run,
-      serve,
-      packExternalModules
+      serve
     );
 
     this.commands = {
@@ -93,8 +91,7 @@ class ServerlessWebpack {
     this.hooks = {
       'before:deploy:createDeploymentArtifacts': () => BbPromise.bind(this)
         .then(this.validate)
-        .then(this.compile)
-        .then(this.packExternalModules),
+        .then(this.compile),
 
       'after:deploy:createDeploymentArtifacts': () => BbPromise.bind(this)
         .then(this.cleanup),
@@ -103,8 +100,7 @@ class ServerlessWebpack {
         .then(this.validate),
 
       'webpack:compile': () => BbPromise.bind(this)
-        .then(this.compile)
-        .then(this.packExternalModules),
+        .then(this.compile),
 
       'webpack:invoke:invoke': () => BbPromise.bind(this)
         .then(this.validate)
