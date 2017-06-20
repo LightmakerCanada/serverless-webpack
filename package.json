@@ -30,19 +30,18 @@
     "bluebird": "^3.4.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "fs-extra": "^0.26.7",
-    "npm-programmatic": "0.0.5"
+    "fs-extra": "^3.0.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.2",
     "istanbul": "^0.4.4",
     "mocha": "^3.0.2",
-    "mockery": "^1.7.0",
-    "serverless": "^1.0.0-beta.2",
-    "sinon": "^1.17.5",
-    "sinon-chai": "^2.8.0"
+    "mockery": "^2.0.0",
+    "serverless": "^1.15.3",
+    "sinon": "^2.3.5",
+    "sinon-chai": "^2.11.0"
   },
   "peerDependencies": {
-    "webpack": "^2"
+    "webpack": "^3"
   }
 }
